@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd8f871b-92da-49de-b85f-1fa65a142711" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPE217-159-hw5.iml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CPE217_159_hw5.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CPE217_159_hw5/hw5/BTreePrinter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CPE217_159_hw5/hw5/List.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CPE217_159_hw5/hw5/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CPE217_159_hw5/hw5/Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CPE217_159_hw5/hw5/Tree.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="fd8f871b-92da-49de-b85f-1fa65a142711" name="Default" comment="clean Update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CPE217-159-hw5.iws" />
@@ -472,6 +461,14 @@
       <option name="presentableId" value="Default" />
       <updated>1477231966595</updated>
     </task>
+    <task id="LOCAL-00001" summary="clean Update">
+      <created>1477232059567</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1477232059567</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -516,6 +513,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="clean Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
