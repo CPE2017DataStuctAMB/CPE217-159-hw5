@@ -2,7 +2,7 @@ package hw5;
 
 // This Tree needs to inherit BTreePrinter
 //n
-public class Tree {
+public class Tree extends BTreePrinter{
     Node root;
     
     public Tree(){
