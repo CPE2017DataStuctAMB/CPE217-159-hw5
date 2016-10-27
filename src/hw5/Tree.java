@@ -14,17 +14,24 @@ public class Tree extends BTreePrinter{
     }
     
     public void printTree(){
-        //super.printTree(root);
+        super.printTree(root);
     }
 
     public Node find(int search_key){
-        // Fix this
-        return null;
+        return find(root, search_key;);
     }
     
     public static Node find(Node node, int search_key){
-        // fix this
-        return null;
+        while(node != null && node.key != search_key)
+        {
+            if(search_key > node.key)
+                node = node.right;
+            else
+                node = node.left;
+        }
+        if(node == null)//return null if reach to leaf's child
+            return null;
+        return node;
     }
     
     public Node findClosest(int search_key){
@@ -38,33 +45,44 @@ public class Tree extends BTreePrinter{
     }
     
     public Node findMin(){
-        // fix this
-        return null;
+        return findMin(root);
     }
     
     public static Node findMin(Node node){
-        // fix this
-        return null;
+        if(node == null)//return node if it's a null as it'll throw an exception in a while loop
+            return node;
+        while(node.left != null)//go to leftmost node
+            node = node.left;
+        return node;
     }
     
     public Node findMax(){
-        // fix this 
-        return null;
+        return findMax(root);
     }
     
     public static Node findMax(Node node){
-        // fix this
-        return null;
+        if(node == null)//return node if it's a null
+            return node;
+        while(node.right != null)//go to rightmost node
+            node = node.right;
+        return node;
     }
     
     public Node findKthSmallest(int k){
-        // fix this
-        return null;
+        return findKthSmallest(root, k);
     }
     
     public static Node findKthSmallest(Node node, int k){
-        // fix this
-        return null;
+        //check if k is more than tree size
+        if(k > node.size())
+            return null;
+        int size = node.left.size()+1;
+        if(k == size)
+            return node;
+        else if(k < size)
+            return findKthSmallest(node.left, k);
+        else //k > size
+            return findKthSmallest(node.right, k-size);
     }
     
     public List rangeSearch(int x, int y){
@@ -105,11 +123,24 @@ public class Tree extends BTreePrinter{
     
     public void insert(int key) {
         if (root == null) {
-            // do something
-        } else {
-            // do something
-            // or
-            System.out.println("Duplicated key!!!");
+            root = new Node(key);
+            //place new node to root if tree is empty
+        }
+        else
+        {
+            //place new node to somewhere else in a tree, if key is not exists
+            Node node = root;
+            while(node.key != key)
+            {
+                if(node.key > key)
+                    node = node.left;
+                else
+                    node = node.right;
+            }
+            if(node == null)
+                node = new Node(key);
+            else
+                System.out.println("Duplicated key!!!");
         }
     }
     
@@ -154,14 +185,15 @@ public class Tree extends BTreePrinter{
     }
     
     public int height(){
-        return -1; // fix this with a single line
+        return root.height();
     }
     
-    public int depth(){// Tree depth is equal to tree height
-        return -1; // fix this with a single line
+    public int depth(){
+        // Tree depth is equal to tree height
+        return root.depth(this);
     }
     
     public int size(){
-        return -1; // fix this with a single line
+        return root.size();
     }
 }
