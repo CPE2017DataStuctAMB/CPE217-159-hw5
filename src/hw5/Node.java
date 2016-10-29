@@ -1,5 +1,7 @@
 package hw5;
 
+import java.util.Objects;
+
 public class Node{
     //n
     Node left;
@@ -54,7 +56,7 @@ public class Node{
     
     public static Node rightAncestor(Node node) {// Case 2
         Node loopNode = node;
-        while(loopNode.parent != null || loopNode.key > loopNode.parent.key)
+        while(loopNode.parent != null && loopNode.key > loopNode.parent.key)
         {
             //check if loopNode is not a root
             //and if loopNode's key is less than its parent's key, if so, return that node

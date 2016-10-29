@@ -99,10 +99,13 @@ public class Tree extends BTreePrinter{
     }
     
     public static Node findKthSmallest(Node node, int k){
-        //check if k is more than tree size
-        if(k > node.size())
-            return null;
-        int size = node.left.size()+1;
+        int size;
+        //size method cannot accept null; it isn't Node
+        if(node.left != null)
+            size = node.left.size()+1;
+        else
+            size = 1;
+
         if(k == size) // k is equals to size of current node, root, at the first time of operation
             return node;
         else if(k < size) // k is less than right-subtree size, so go to right subtree
