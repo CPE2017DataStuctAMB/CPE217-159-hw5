@@ -227,23 +227,26 @@ public class Tree extends BTreePrinter{
         if (root == null) {
             System.out.println("Empty Tree!!!");
         } else if (root.key == key) { // Delete root node
-            Node toBeRoot;
-            if(root.right != null){
-                toBeRoot = findMin(root.right); // get the lowest key from right-subtree
-                //disconnect former lowest key node from its parent
-                toBeRoot.parent.left = toBeRoot.right;
-                toBeRoot.parent = null;
-            }
-            else // have to find highest key from left-subtree, do quite the same thing as the above
+            if(root.left == null && root.right == null)//has only root
+                root = null;
+            else if (root.right == null)//has no right-subtree
             {
-                toBeRoot = findMax(root.left);
-                root.parent.right = toBeRoot.left;
-                root.parent = null;
+                Node replace = findMax(root.left);
+                key = replace.key;
+                delete(replace);
+                replace = new Node(key);
+                replace(root, replace);
+                root = replace;
             }
-            //connect toBeRoot to root
-            toBeRoot.left = root.left;
-            toBeRoot.right = root.right;
-            root = toBeRoot;
+            else
+            {
+                Node replace = findMin(root.right);
+                key = replace.key;
+                delete(replace);
+                replace = new Node(key);
+                replace(root, replace);
+                root = replace;
+            }
         } else { 
             Node toBeDeleted = find(key);
             if(toBeDeleted == null)
@@ -256,7 +259,59 @@ public class Tree extends BTreePrinter{
     // this function should delete only non-root node
     // run recursively
     public static void delete(Node node){
-        //redo all again
+        //case1: node has two children
+        if(!(node.right == null || node.left == null))
+        {
+            Node replace = findMin(node.left);
+            int key = replace.key;
+            delete(replace);
+            replace = new Node(key);
+            replace(node, replace);
+        }
+        //case2: node has one child
+        else if(!(node.right == null && node.left == null))
+        {
+            if(node.right != null)
+            {
+                if(node.parent.left == node)//this node is a left leaf of its parent
+                {
+                    node.parent.left = node.right;
+                    node.right.parent = node.parent;
+                }
+                else
+                {
+                    node.parent.right = node.right;
+                    node.right.parent = node.parent;
+                }
+            }
+            else
+            {
+                if(node.parent.left == node)
+                {
+                    node.parent.left = node.left;
+                    node.left.parent = node.parent;
+                }
+                else
+                {
+                    node.parent.right = node.left;
+                    node.left.parent = node.parent;
+                }
+            }
+        }
+        //case3: node has no child
+        else
+        {
+            if(node.parent.left == node)//this node is a left leaf of its parent
+            {
+                node.parent.left = null;
+                node.parent = null;
+            }
+            else
+            {
+                node.parent.right = null;
+                node.parent = null;
+            }
+        }
     }
     
     // Replace node1 with a new node2

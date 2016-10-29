@@ -13,7 +13,7 @@ public class Main {
 
         Tree tree = new Tree();
 
-        tree.printTree();
+        /*tree.printTree();
         int[] keyList = {5, 3, 1, 2, 7, 9, 10, 8};
         for (int i=0; i<keyList.length; i++)
             tree.insert(keyList[i]);
@@ -23,7 +23,7 @@ public class Main {
         node = tree.findClosest(4); printNodeKey(node);
         node = tree.findClosest(3); printNodeKey(node);
         node = tree.findClosest(-999); printNodeKey(node);
-        node = tree.findClosest(999); printNodeKey(node);
+        node = tree.findClosest(999); printNodeKey(node);*/
 
         /*int[] keyList = {6, 7, 9, 5, 3, 9, 10, 8, 1};
         for (int i=0; i<keyList.length; i++)
