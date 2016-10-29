@@ -3,7 +3,6 @@ package hw5;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-//n
 
 public class BTreePrinter {
 
