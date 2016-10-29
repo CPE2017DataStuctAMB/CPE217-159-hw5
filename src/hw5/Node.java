@@ -46,6 +46,7 @@ public class Node{
     
     public static Node leftDescendant(Node node){// Case 1
         Node loopNode = node;
+        //the first operate node cannot be null, we already check it from findNext() method.
         while(loopNode.left != null)
             loopNode = loopNode.left;
         return loopNode;
